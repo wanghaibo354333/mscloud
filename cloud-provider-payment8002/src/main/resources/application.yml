@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: cloud-payment-service
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://localhost:8001
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -24,3 +30,10 @@ eureka:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.atguigu.springcloud.entities
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

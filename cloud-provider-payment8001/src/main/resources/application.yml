@@ -4,6 +4,14 @@ server:
 spring:
   application:
     name: cloud-payment-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wanghaibo354333/hellodemo.git
+          search-paths:
+            - hellodemo
+      label: master
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
